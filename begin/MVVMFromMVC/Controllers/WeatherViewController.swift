@@ -53,14 +53,14 @@ class WeatherViewController: UIViewController {
       guard
         let self = self,
         let location = locations.first
-        else {
-          return
-        }
+      else {
+        return
+      }
       self.cityLabel.text = location.name
       self.fetchWeatherForLocation(location)
     }
   }
-
+  
   func fetchWeatherForLocation(_ location: Location) {
     //1
     WeatherbitService.weatherDataForLocation(
@@ -70,9 +70,9 @@ class WeatherViewController: UIViewController {
       guard
         let self = self,
         let weatherData = weatherData
-        else {
-          return
-        }
+      else {
+        return
+      }
       self.dateLabel.text =
         self.dateFormatter.string(from: weatherData.date)
       self.currentIcon.image = UIImage(named: weatherData.iconName)
